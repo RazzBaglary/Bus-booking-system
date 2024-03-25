@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	
+	<!-- Database Connection settings -->
+	<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://localhost:3306/bus_booking</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">Razz@1997</property>
+	
+	<!-- Mysql Dialect -->
+	<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	
+	<!-- Enable Hibernate's automatic session context management -->
+	<property name="current_session_context_class">thread</property>
+	
+	<!-- Database Schema -->
+	<property name="hbm2ddl.auto">update</property>
+	
+	
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	
+	<!-- mapping entities  -->
+	<mapping class="com.entity.User"/>
+	<mapping class="com.entity.bus"/>
+	<mapping class="com.helper.SessionProvider"/>
+	<mapping class="com.servlet.register"/>
+	<mapping class="com.servlet.login"/>
+	<mapping class="com.servlet.logout"/>
+	<mapping class="com.servlet.adminsignin"/>
+	<mapping class="com.servlet.addbus"/>
+	<mapping class="com.servlet.deleteBus"/>
+	
+	
+	</session-factory>
+
+</hibernate-configuration>
